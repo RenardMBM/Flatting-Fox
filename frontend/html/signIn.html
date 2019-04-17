@@ -1,0 +1,32 @@
+{% extends "html/base.html" %}
+
+{% block nav %}
+<a class="nav_link" href="register">Sign Up</a>
+{% endblock %}
+
+{% block content %}
+<div class="intro">
+    <div class="container">
+        <div class="title-content">
+            <h1>
+                Log in to continue to Flattering Fox
+            </h1>
+            <p>
+                <span id="main-message" hidden ></span>
+                <input id="login" name="login" type="text" placeholder="Login"><br>
+                <label id="login-message" hidden for="login" class="error-message">123</label>
+            </p>
+            <p>
+                <input id="password" name="password1" type="password" placeholder="Password"><br>
+                <label id="pw-message" hidden for="password" class="error-message">123</label>
+            </p>
+            <p>
+                <button id="sign-in">Sign In</button>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script src= "{{url_for('static', filename='js/login.js')}}"></script>
+
+{% endblock %}

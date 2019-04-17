@@ -1,0 +1,31 @@
+{% extends "html/base.html" %}
+
+{% block nav %}
+<a class="nav_link" id="profile" href="profile">Profile</a>
+{% endblock %}
+
+{% block content %}
+<div class="intro" id="intro-main">
+    <div class="container">
+        <div class="title-content" id="intro-title">
+            Welcome to Flatting Fox<br>
+            Let's play<br>
+            <button class="button-play" id="play">Play</button>
+        </div>
+    </div>
+</div>
+<div class="rating">
+    <table class="leader-table" id="leader-table">
+        <tr>
+            <th>
+                Username
+            </th>
+            <th>
+                Points
+            </th>
+        </tr>
+    </table>
+</div>
+<script src= "{{url_for('static', filename='js/play.js')}}"></script>
+<script src= "{{url_for('static', filename='js/main-table.js')}}"></script>
+{% endblock %}

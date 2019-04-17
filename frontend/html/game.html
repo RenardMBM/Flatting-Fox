@@ -1,0 +1,12 @@
+{% extends "html/base.html" %}
+
+{% block nav %}
+<a class="nav_link" id="profile" href="profile">Profile</a>
+<a id="exit" class="nav_link">Sign out</a>
+{% endblock %}
+
+{% block content %}
+<canvas id="canvas"></canvas>
+<script src="{{url_for('static', filename='js/game.js')}}"></script>
+<script src="{{url_for('static', filename='js/exit.js')}}"></script>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "html/base.html" %}
+
+{% block nav %}
+<a class="nav_link" href="login">Sign in</a>
+{% endblock %}
+
+{% block content %}
+<div class="intro">
+    <div class="container">
+        <div class="title-content">
+            <h1 class="registration-fox">
+                Create your account
+            </h1>
+            <h3>
+                Complete your account details
+            </h3>
+            <p>
+                <input id="username" name="username" type="text" placeholder="Username"><br>
+                <label id="usr-message" hidden for="username" class="error-message">123</label>
+            </p>
+            <p>
+                <input id="login" name="login" type="text" placeholder="Login"><br>
+                <label id="login-message" hidden for="login" class="error-message">123</label>
+            </p>
+            <p>
+                <input id="password" name="password1" type="password" placeholder="Password"><br>
+                <label id="pw-message" hidden for="password" class="error-message">123</label>
+            </p>
+            <p>
+                <input id="repeat-password" name="password2" type="password" placeholder="Repeat your password"><br>
+                <label id="rep-pw-message" hidden for="repeat-password" class="error-message">123</label>
+            </p>
+            <p>
+                <button id="sign-up">Sign Up</button>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script src= "{{url_for('static', filename='js/register.js')}}"></script>
+
+{% endblock %}

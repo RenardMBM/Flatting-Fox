@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../frontend/css/style.css">
+    <title>{{title}}</title>
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="header_inner">
+            <nav>
+                <a class="header_logo" href="main">
+                    Flattering Fox
+                </a>
+            </nav>
+            <nav class="nav">
+                {% block nav %}{% endblock %}
+            </nav>
+        </div>
+    </div>
+</header>
+
+{% block content %}{% endblock %}
+</body>
+</html>
