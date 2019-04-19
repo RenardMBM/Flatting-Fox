@@ -16,6 +16,7 @@ body{
 
 /*Intro*/
 .intro {
+    font-family: "Acme", sans-serif;
     width: 100%;
     /*margin-top: 10%;*/
     /*background: url("../images/wallpeper.jpg") center no-repeat;*/
@@ -37,6 +38,10 @@ body{
 
 #intro-title{
     font-size: 30px;
+}
+
+.title{
+    color: #192028;
 }
 
 .intro-button{
@@ -213,6 +218,7 @@ canvas{
 }
 
 .story-table{
+    weight: 100%;
     font-size: 20px;
     color: #fff;
     border: outset #204f5c;
@@ -230,11 +236,18 @@ canvas{
     float: right;
     overflow: scroll;
     height: 300px;
-    width: 193px;
+    width: 210px;
+    /*border-radius: 16px;*/
+    /*border: outset #204f5c;*/
+}
+.table{
     border-radius: 16px;
     border: outset #204f5c;
 }
 
+.clean{
+    width: 210px;
+}
 /*Main*/
 .rating{
     margin-top: 30px;

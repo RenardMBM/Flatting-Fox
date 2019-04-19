@@ -6,9 +6,9 @@ document.getElementById("exit").onclick = function () {
   exit_xml.send();
   exit_xml.onreadystatechange = function () {
       if (exit_xml.status !== 200){
-
+          alert("error")
       }
-      else if (xhr_story.readyState === XMLHttpRequest.DONE){
+      else if (exit_xml.readyState === XMLHttpRequest.DONE){
           let answer = JSON.parse(exit_xml.responseText);
 
           if (answer === "success"){
@@ -17,7 +17,6 @@ document.getElementById("exit").onclick = function () {
           }
           else {
               window.location.href = "/main";
-              alert("How you ")
           }
       }
   }

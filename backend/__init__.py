@@ -187,6 +187,7 @@ def story():
         if type(data) is dict and \
                 all([i in data for i in indexes]) and len(data) == len(indexes):
             games = story_table.get(data["user-id"])
+            games.reverse()
             return dumps({"errors": None,
                           "games": games})
         return dumps({"errors": "error",
@@ -198,6 +199,24 @@ def profile():
     if "login" in session:
         return render_template("html/profile.html", title="Flattering Fox")
     return redirect("/main")
+
+
+@app.route("/Clean", methods=["POST"])
+def clean():
+    if request.method == "POST":
+        try:
+            data = loads(request.data)
+
+        except JSONDecodeError:
+            return dumps('Oops')
+        indexes = ('user-id',)
+        if type(data) is dict and \
+                all([i in data for i in indexes]) and len(data) == len(indexes):
+            usr_id = data["user-id"]
+            if story_table.get(usr_id):
+                story_table.delete(usr_id)
+            users_table.set_max(usr_id, 0)
+            return dumps("success")
 
 
 @app.route('/Max', methods=["POST"])
@@ -219,7 +238,10 @@ def max_points():
 
 
 if __name__ == "__main__":
+
     database = DB()
     users_table = UsersTable(database.get_connection())
+    users_table.init_table()
     story_table = StoryTable(database.get_connection())
+    story_table.init_table()
     app.run("127.0.0.1", 8000)

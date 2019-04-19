@@ -15,16 +15,19 @@
                     <h1 id="username"></h1>
                 </div>
                 <div class="table-place">
-                    <table id="story-table" class="story-table" cellpadding="10">
-                        <tr>
-                            <th>
-                                Date
-                            </th>
-                            <th>
-                                Points
-                            </th>
-                        </tr>
-                    </table>
+                    <button id="clean" class="clean">Clean</button>
+                    <div class="table">
+                        <table id="story-table" class="story-table" cellpadding="10" width="100%">
+                            <tr>
+                                <th>
+                                    Date
+                                </th>
+                                <th>
+                                    Points
+                                </th>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -32,4 +35,5 @@
 </div>
 <script src= "{{url_for('static', filename='js/profile.js')}}"></script>
 <script src= "{{url_for('static', filename='js/exit.js')}}"></script>
+<script src= "{{url_for('static', filename='js/clean.js')}}"></script>
 {% endblock %}
